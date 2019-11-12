@@ -48,6 +48,7 @@ public class ReportGenerator {
 	Font boldFont = new Font(FontFamily.HELVETICA, 12, Font.BOLD, BaseColor.BLACK);
 	Double openingBal;
 	double closingBal, totalCR, totalDR;
+	double totalClosingBal = 0;
 	String fromDate, toDate;
 
 	Document document;
@@ -100,11 +101,15 @@ public class ReportGenerator {
 			if(openingBal == null){
 				openingBal = 0.0;
 			}
+			totalClosingBal = openingBal;
+			
 			System.out.println("Opening Balance :: " + openingBal);
 
 			for (int i = 0; i < months; i++) {
 				addMonth(i, date, date2);
 			}
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			e.printStackTrace();
@@ -284,6 +289,7 @@ public class ReportGenerator {
 			document.add(new Chunk(ls));
 
 			openingBal = closingBal;
+			totalClosingBal += closingBal;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

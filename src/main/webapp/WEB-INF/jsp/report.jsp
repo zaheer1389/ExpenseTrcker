@@ -38,11 +38,11 @@
 		  <form action="report" method="post">
 		    <div class="form-group">
 		      <label for="fromDate">From Date:</label>
-		      <input type="text" class="form-control" id="fromDate" placeholder="Enter from date" name="fromDate">
+		      <input type="text" class="form-control" id="fromDate" placeholder="dd-MM-yyyy" name="fromDate">
 		    </div>
 		    <div class="form-group">
 		      <label for="toDate">Password:</label>
-		      <input type="text" class="form-control" id="toDate" placeholder="Enter to date" name="toDate">
+		      <input type="text" class="form-control" id="toDate" placeholder="dd-MM-yyyy" name="toDate">
 		    </div>
 		    
 		    <button type="submit" class="btn btn-primary">Report</button>

@@ -11,7 +11,7 @@ import com.expensemanager.dao.Expense;
 
 public interface ExpenseRepository extends CrudRepository<Expense, Long> {
 	
-	@Query(value = "SELECT * FROM expense WHERE Date between :fromDate AND :toDate", nativeQuery =  true)
+	@Query(value = "SELECT * FROM expense WHERE Date between :fromDate AND :toDate order by Date asc", nativeQuery =  true)
 	List<Expense> findBetweenDate(@Param("fromDate")Date fromDate, @Param("toDate")Date toDate);
 	
 	@Query(value = "SELECT SUM(Amount) FROM expense WHERE Date < :fromDate", nativeQuery =  true)
